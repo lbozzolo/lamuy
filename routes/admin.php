@@ -89,6 +89,10 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'SliderController@activate'
     ]);
 
+    Route::get('pdf/{file}', [
+        'as' => 'pdf.ver',
+        'uses' => 'ImageController@verPdf'
+    ]);
 
 });
 
