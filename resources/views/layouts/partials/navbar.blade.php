@@ -11,14 +11,6 @@
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center" style="background-image: linear-gradient(to right, white, magenta , darkmagenta);">
 
-            <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-                <li class="nav-item">
-                    <a href="{{ asset('web/home') }}" target="_blank" class="nav-link" style="color: darkslategray">
-                        <i class="mdi mdi-web"></i>WebSite
-                    </a>
-                </li>
-            </ul>
-
             <ul class="navbar-nav navbar-nav-right">
 
                 <li class="nav-item dropdown d-none d-xl-inline-block">

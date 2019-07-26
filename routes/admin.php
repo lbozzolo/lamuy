@@ -37,35 +37,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('images', 'ImageController');
 
-    Route::resource('categories', 'CategoryController');
-
-    Route::resource('sliders', 'SliderController');
-
-    Route::resource('medias', 'MediaController');
-
-    Route::resource('advertisments', 'AdvertismentController');
-
-    Route::resource('albums', 'AlbumController');
-
-    Route::resource('comments', 'CommentController');
-
-    Route::resource('likes', 'LikeController');
-
-    Route::resource('noticias', 'NoticiaController');
-
-    Route::resource('types', 'TypeController');
-
-    Route::get('medias/create/present', [
-        'as' => 'medias.create.present',
-        'uses' => 'MediaController@createPresent'
-    ]);
-
-    Route::post('medias/upload/images', [
-        'as' => 'medias.upload.images',
-        'uses' => 'MediaController@uploadImages'
-    ]);
-
-
     // Imágenes
 
     Route::get('imagenes/{file}', [
