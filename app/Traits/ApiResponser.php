@@ -65,11 +65,23 @@ trait ApiResponser
     {
         foreach (request()->query() as $attribute => $value){
             if (isset($attribute, $value) && $attribute != 'sort_by'){
-                if ($attribute == 'date'){
-                    $collection = $collection->where($attribute, Carbon::parse('01-'.$value)->format('Y-m-d 00:00:00'));
+                if($attribute == 'year'){
+
+                    $collection = $collection->filter(function ($item) use ($value) {
+                        return false !== stristr($item->date, $value);
+                    });
+
                 } else {
-                    $collection = $collection->where($attribute, $value);
+
+                    if ($attribute == 'date'){
+
+                        $collection = $collection->where($attribute, Carbon::parse('01-'.$value)->format('Y-m-d 00:00:00'));
+                    } else {
+                        $collection = $collection->where($attribute, $value);
+                    }
+
                 }
+
             }
         }
 
