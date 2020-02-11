@@ -30,6 +30,7 @@ trait ApiResponser
 
         $collection = $this->filterData($collection);
         $collection = $this->sortData($collection);
+
         //$collection = $this->paginate($collection);
 
         $collection = $this->transformData($collection, $transformer);
@@ -58,7 +59,7 @@ trait ApiResponser
             $collection = $collection->sortBy->{$attribute};
         }
 
-        return $collection;
+        return $collection->sortByDesc('number');
     }
 
     public function filterData(Collection $collection)
