@@ -24,7 +24,7 @@ class MagazineController extends Controller
     public function index()
     {
         $model = new Magazine();
-        $magazines = Magazine::get($model->apiAttributes);
+        $magazines = Magazine::orderBy('number')->get($model->apiAttributes);
 
         return $this->showAll($magazines);
     }
