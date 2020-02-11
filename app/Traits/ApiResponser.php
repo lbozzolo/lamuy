@@ -55,7 +55,9 @@ trait ApiResponser
     {
         if (request()->has('sort_by')){
             $attribute = request()->sort_by;
-            $collection = $collection->sortByDesc->{$attribute};
+            $collection = $collection->sortBy->{$attribute};
+        } else {
+            $collection = $collection->sortByDesc('date');
         }
 
         return $collection;
