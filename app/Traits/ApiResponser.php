@@ -26,14 +26,14 @@ trait ApiResponser
             return $this->successResponse(['data' => $collection], $code);
         }
 
-        //$transformer = $collection->first()->transformer;
+        $transformer = $collection->first()->transformer;
 
         //$collection = $this->filterData($collection);
         //$collection = $this->sortData($collection);
 
         //$collection = $this->paginate($collection);
 
-        //$collection = $this->transformData($collection, $transformer);
+        $collection = $this->transformData($collection, $transformer);
 
         return $this->successResponse($collection, $code);
     }
